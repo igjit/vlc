@@ -252,7 +252,7 @@ function parse()
             line = vlc.readline()
             if not line then break end
             if string.match( line, "<meta name=\"title\"" ) then
-                _,_,name = string.find( line, "content=\"(.-)\"" )
+                _,_,name = string.find( line, "<meta name=\"title\" content=\"(.-)\"" )
                 name = vlc.strings.resolve_xml_special_chars( name )
                 name = vlc.strings.resolve_xml_special_chars( name )
             end
